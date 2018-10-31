@@ -1,5 +1,6 @@
 package com.rabbitmq.rabbitmqtutorial.tutorial.tut2;
 
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class Tut2Sender {
 
 
     @Autowired
-    private RabbitTemplate template;
+    private AmqpTemplate template;
 
     @Autowired
     private Queue queue;
@@ -37,8 +38,8 @@ public class Tut2Sender {
 
     @Scheduled(fixedDelay = 1000, initialDelay = 500)
     public void send(){
-        StringBuilder builder = new StringBuilder("hello");
-        if (dots++ ==3){
+        StringBuilder builder = new StringBuilder("Hello");
+        if (dots++ == 3){
             dots = 1;
         }
 
