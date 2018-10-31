@@ -16,13 +16,13 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
  * @Description:
  */
 
+//@RabbitListener(queues = "hello")
 @RabbitListener(queues = "hello-world")
 public class Tut1Receiver {
 
     @RabbitHandler
     public void receive(String in){
-
-        System.out.print(" [x] Received '" + in + "'");
+        System.out.println(" [x] Received '" + in + "'");
     }
 
 

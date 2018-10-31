@@ -24,8 +24,15 @@ import org.springframework.context.annotation.Profile;
 @Configuration
 public class Tut1Config {
 
+    /**
+     *  定义一个 queue，名字为 hello-world
+     * @return
+     */
+
     @Bean
-    public Queue hello() {
+    public Queue queue() {
+//    public Queue hello() {
+//        return new Queue("hello");
         return new Queue("hello-world");
     }
 

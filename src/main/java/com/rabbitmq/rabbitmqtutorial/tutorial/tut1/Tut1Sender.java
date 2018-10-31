@@ -21,18 +21,24 @@ import java.util.Date;
  */
 public class Tut1Sender {
 
+    /**
+     * AmqpTemplate 的默认实现就是 RabbitTemplate
+     */
     @Autowired
     private AmqpTemplate amqpTemplate;
 
     @Autowired
     private Queue queue;
 
+    /**
+     * 用定时任务来模拟生产者定时发送消息
+     */
     @Scheduled(fixedDelay = 1000, initialDelay = 500)
     public void send(){
 
         String message = "Hello World!" + new Date();
         amqpTemplate.convertAndSend(queue.getName(), message);
-        System.out.print(" [x] Sent '" + message + "'");
+        System.out.println(" [x] Sent '" + message + "'");
 
     }
 }

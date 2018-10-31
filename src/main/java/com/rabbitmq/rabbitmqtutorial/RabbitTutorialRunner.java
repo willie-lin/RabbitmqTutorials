@@ -4,13 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.ConfigurableApplicationContext;
-import sun.applet.Main;
 
-import javax.sound.midi.Soundbank;
 
 /**
  * Created with IntelliJ IDEA.
  *
+ * @author YuAn
  * @Package: com.rabbitmq.rabbitmqtutorial
  * @auther: YuAn
  * @Date: 2018/10/31
@@ -20,6 +19,7 @@ import javax.sound.midi.Soundbank;
  * @Description:
  */
 public class RabbitTutorialRunner implements CommandLineRunner {
+
 
     @Value("${tutorial.client.duration:0}")
     private int duration;
@@ -34,5 +34,6 @@ public class RabbitTutorialRunner implements CommandLineRunner {
         Thread.sleep(duration);
         ctx.close();
 
-    }
+   }
+
 }
