@@ -50,6 +50,8 @@ public class Tut5Config {
         }
     }
 
+    @Profile("sender")
+    @Bean
     public Tut5Sender sender() {
         return new Tut5Sender();
     }
